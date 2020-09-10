@@ -35,7 +35,7 @@
     "/packages/paste-core/primitives/non-modal-dialog",
     "/packages/paste-core/primitives/tabs",
     "/packages/paste-core/primitives/text",
-    "/packages/paste-core/primitives/tooltips",
+    "/packages/paste-core/primitives/tooltip",
     "/packages/paste-core/core-bundle",
     "/packages/paste-design-tokens",
     "/packages/paste-icons",
