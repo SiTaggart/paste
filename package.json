@@ -102,6 +102,7 @@
     "@types/webpack-env": "^1.13.9",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-macros": "^2.6.1",
     "babel-preset-gatsby": "^0.2.8",
