@@ -21,10 +21,9 @@
     "build": "yarn clean && yarn compile",
     "build:dev": "yarn clean && yarn compile:dev",
     "clean": "rm -rf ./dist && rm -rf tsconfig.build.tsbuildinfo && rm -rf .rpt2_cache",
-    "compile": "babel ./src/*.tsx --out-dir ./dist --extensions '.tsx' && tsc",
+    "compile": "babel ./src/*.tsx --out-dir ./dist --extensions '.tsx' && tsc && node ./tools/minify",
     "compile:dev": "babel ./src/*.tsx --out-dir ./dist --extensions '.tsx' && tsc",
-    "prepublishOnly": "yarn build",
-    "type-check": "tsc --noEmit"
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@twilio-paste/absolute": "^2.0.68",

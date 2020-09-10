@@ -1,3 +1,5 @@
+const fs = require('fs');
+const {join} = require('path');
 const {getUnbarreledFileFullPath, BLOCKLIST} = require('./constants');
 const {getRepoPackages} = require('../../../../tools/utils/getRepoPackages');
 const {writeToFile} = require('../../../../tools/utils/writeToFile');
@@ -14,7 +16,7 @@ function generateIndexFromPackageList(packageList) {
 // See: https://stackoverflow.com/questions/58527907/barrel-file-and-tree-shaking
 function generateUnbarreledExports(packageList) {
   packageList.forEach(package => {
-    writeToFile(getUnbarreledFileFullPath(package), `export * from '${package.name}';`, {
+    writeToFile(getUnbarreledFileFullPath(package), `export * from '${package.name}';\n`, {
       successMessage: `[@twilio-paste/core] ${package.name} export file generated.`,
     });
   });
@@ -38,6 +40,16 @@ function getCoreRelevantPackages(packageList) {
   });
 }
 
+function getAllJsFiles(dirPath) {
+  const files = fs.readdirSync(dirPath);
+  const arrayOfFiles = [];
+
+  files.forEach(file => {
+    arrayOfFiles.push(join(dirPath, '/', file));
+  });
+  return arrayOfFiles.filter(file => file.match(/\.js$/));
+}
+
 module.exports = {
   getRepoPackages,
   writeToFile,
@@ -45,4 +57,5 @@ module.exports = {
   generateUnbarreledExports,
   generateVersionedDependencyList,
   getCoreRelevantPackages,
+  getAllJsFiles,
 };

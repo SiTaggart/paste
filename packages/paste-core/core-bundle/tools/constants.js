@@ -7,6 +7,7 @@ const BLOCKLIST = ['@twilio-paste/core', '@twilio-paste/typography', '@twilio-pa
 const CORE_BUNDLE_PATH = join(__dirname, '../');
 const CORE_BUNDLE_INDEX_PATH = join(CORE_BUNDLE_PATH, 'src/index.tsx');
 const CORE_BUNDLE_PACKAGE_PATH = join(CORE_BUNDLE_PATH, 'package.json');
+const CORE_BUNDLE_OUTPUT_PATH = join(CORE_BUNDLE_PATH, 'dist/');
 
 const getUnbarreledFilePath = package => `src/${package.name.replace('@twilio-paste/', '')}.tsx`;
 const getUnbarreledFileFullPath = package => join(CORE_BUNDLE_PATH, getUnbarreledFilePath(package));
@@ -16,7 +17,7 @@ module.exports = {
   CORE_BUNDLE_PATH,
   CORE_BUNDLE_INDEX_PATH,
   CORE_BUNDLE_PACKAGE_PATH,
-
+  CORE_BUNDLE_OUTPUT_PATH,
   getUnbarreledFilePath,
   getUnbarreledFileFullPath,
 };

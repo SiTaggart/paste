@@ -45,7 +45,7 @@
     "prettier": "prettier --list-different '{.storybook,packages}/**/*.{ts,tsx}'",
     "prettier-clean": "prettier --write '{.storybook,packages}/**/*.{ts,tsx}'",
     "lint": "yarn pre-test && eslint --ext .tsx,.ts ./packages/**",
-    "type-check": "lerna run type-check",
+    "type-check": "lerna run type-check --ignore @twilio-paste/core",
     "chromatic": "chromatic"
   },
   "dependencies": {
@@ -163,6 +163,7 @@
     "rollup-plugin-typescript2": "^0.21.2",
     "shelljs": "^0.8.3",
     "storybook-readme": "^5.0.5",
+    "terser": "^5.3.0",
     "theo": "^8.1.5",
     "typedoc": "^0.16.9",
     "typescript": "3.7.5",
