@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Theme} from '@twilio-paste/theme';
-import {Box, Heading, Button} from '@twilio-paste/core';
+import {Box} from '@twilio-paste/core/dist/box';
+import {Button} from '@twilio-paste/core/dist/button';
+import {Heading} from '@twilio-paste/core/dist/heading';
 import * as serviceWorker from './serviceWorker';
 
 function App() {
