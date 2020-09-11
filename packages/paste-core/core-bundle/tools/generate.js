@@ -32,7 +32,7 @@ const {
   /*
    * Write each unbarreled file
    */
-  generateUnbarreledExports(filteredCorePackageList);
+  generateUnbarreledExports(sortedPackageList);
 
   /*
    * Update package.json file
@@ -41,7 +41,7 @@ const {
   const packageJson = require(CORE_BUNDLE_PACKAGE_PATH);
   const newPackageJson = {
     ...packageJson,
-    dependencies: generateVersionedDependencyList(filteredCorePackageList),
+    dependencies: generateVersionedDependencyList(sortedPackageList),
   };
   const newPackageJsonString = `${JSON.stringify(newPackageJson, null, 2)}\n`;
   writeToFile(CORE_BUNDLE_PACKAGE_PATH, newPackageJsonString, {
